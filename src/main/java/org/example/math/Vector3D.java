@@ -65,6 +65,14 @@ public final class Vector3D {
         return Math.hypot(Math.hypot(x, y), z);
     }
 
+    public Vector3D normalize() {
+        double len = length();
+        if (len == 0) {
+            return new Vector3D();
+        }
+        return new Vector3D(x / len, y / len, z / len);
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == this) return true;
