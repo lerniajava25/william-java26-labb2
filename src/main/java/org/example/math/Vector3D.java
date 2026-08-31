@@ -66,7 +66,11 @@ public final class Vector3D {
     }
 
     public Vector3D normalize() {
-        return new Vector3D(x / length(), y / length(), z / length());
+        double len = length();
+        if (len == 0) {
+            return new Vector3D();
+        }
+        return new Vector3D(x / len, y / len, z / len);
     }
 
     @Override
