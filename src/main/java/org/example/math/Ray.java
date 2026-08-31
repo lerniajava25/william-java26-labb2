@@ -8,6 +8,9 @@ public class Ray {
 
     public Ray(Vector3D origin, Vector3D direction) {
         this.origin = origin;
+        if(direction.length() == 0) {
+            throw new IllegalArgumentException("Riktningen på en Ray får inte vara noll!");
+        }
         this.direction = direction.normalize();
     }
 
