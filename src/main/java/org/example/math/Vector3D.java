@@ -62,7 +62,7 @@ public final class Vector3D {
     }
 
     public double length() {
-        return Math.sqrt(this.dot(this));
+        return Math.hypot(Math.hypot(x, y), z);
     }
 
     @Override
