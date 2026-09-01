@@ -16,7 +16,7 @@ public record Color(double r, double g, double b) {
     }
 
     public Color subtract(Color other) {
-        return new Color(this.r - other.r, this.g - other.b, this.b - other.b);
+        return new Color(this.r - other.r, this.g - other.g, this.b - other.b);
     }
 
     public Color multiply(double scalar) {
