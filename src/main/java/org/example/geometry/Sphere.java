@@ -11,6 +11,10 @@ public final class Sphere extends Shape {
     private final double radius;
 
     public Sphere(Vector3D center, double radius, Color color) {
+        if(radius < 0) {
+            throw new IllegalArgumentException("En sfär får inte ha en radie som är negativ");
+        }
+
         this.center = center;
         this.radius = radius;
         this.color = color;
