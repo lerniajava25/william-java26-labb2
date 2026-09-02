@@ -4,7 +4,6 @@ import org.example.math.Color;
 import org.example.math.Ray;
 import org.example.math.Vector3D;
 
-import java.util.Objects;
 import java.util.Optional;
 
 public final class Sphere extends Shape {
@@ -23,10 +22,6 @@ public final class Sphere extends Shape {
 
     public double radius() {
         return radius;
-    }
-
-    public Color color() {
-        return color;
     }
 
     @Override
@@ -60,26 +55,4 @@ public final class Sphere extends Shape {
         Intersection intersection = new Intersection(hitPos, t, this);
         return Optional.of(intersection);
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (obj == null || obj.getClass() != this.getClass()) return false;
-        var that = (Sphere) obj;
-        return Objects.equals(this.center, that.center) &&
-                Double.doubleToLongBits(this.radius) == Double.doubleToLongBits(that.radius);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(center, radius);
-    }
-
-    @Override
-    public String toString() {
-        return "Sphere[" +
-                "center=" + center + ", " +
-                "radius=" + radius + ']';
-    }
-
 }
