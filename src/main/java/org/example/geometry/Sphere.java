@@ -45,9 +45,9 @@ public final class Sphere extends Shape {
         double t2 = (-b + sqrtDiscriminant) / (2 * a);
 
         double t = -1;
-        if(t1 > 0.0001) {
+        if(t1 > 0) {
             t = t1;
-        } else if(t2 > 0.0001) {
+        } else if(t2 > 0) {
             t = t2;
         }
 
