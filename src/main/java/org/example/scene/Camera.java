@@ -13,6 +13,14 @@ public class Camera {
     private final Ray[][] viewportRays;
 
     public Camera(Vector3D position, Vector3D direction, int viewportWidth, int viewportHeight) {
+        if (direction.length() == 0) {
+            throw new IllegalArgumentException("Riktningen på en kamera får inte vara noll!");
+        }
+
+        if(viewportWidth < 1 || viewportHeight < 1) {
+            throw new IllegalArgumentException("Kamerans viewport måste vara större än noll i både X- och Y-led");
+        }
+
         this.position = position;
         this.direction = direction;
         this.viewportWidth = viewportWidth;
