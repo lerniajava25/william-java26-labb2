@@ -23,6 +23,14 @@ public record Color(double r, double g, double b) {
         return new Color(this.r * scalar, this.g * scalar, this.b * scalar);
     }
 
+    public int toRGB() {
+        int red = (int) Math.round(r * 255);
+        int green = (int) Math.round(g * 255);
+        int blue = (int) Math.round(b * 255);
+
+        return (255 << 24) | (red << 16) | (green << 8) | blue;
+    }
+
     @Override
     public String toString() {
         return "Color[" +

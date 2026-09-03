@@ -30,6 +30,14 @@ public class Camera {
         generateViewportRays();
     }
 
+    public int getViewportWidth() {
+        return viewportWidth;
+    }
+
+    public int getViewportHeight() {
+        return viewportHeight;
+    }
+
     public Ray[][] getViewportRays() {
         return viewportRays;
     }
