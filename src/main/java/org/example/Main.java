@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.geometry.Shape;
 import org.example.geometry.Sphere;
+import org.example.geometry.Triangle;
 import org.example.math.Color;
 import org.example.math.Vector3D;
 import org.example.renderer.ImageWriter;
@@ -20,10 +21,12 @@ public class Main {
 
     void main() {
         List<Shape> shapes = new ArrayList<>();
-        Sphere sphere1 = new Sphere(new Vector3D(0, 0, 80), 30, new Color(1, 0, 0));
+        Sphere sphere1 = new Sphere(new Vector3D(0, 0, 80), 10, new Color(1, 0, 0));
         Sphere sphere2 = new Sphere(new Vector3D(40, 0, 90), 20, new Color(0, 1, 0));
+        Triangle triangle1 = new Triangle(new Vector3D(0, 0, 180), new Vector3D(-20, 20, 135), new Vector3D(-40, 0, 90), new Color(0, 0, 1));
         shapes.add(sphere1);
         shapes.add(sphere2);
+        shapes.add(triangle1);
 
         Scene scene = new Scene(shapes);
         Camera camera = new Camera(new Vector3D(0, 0, 0), new Vector3D(0, 0, 1), VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
