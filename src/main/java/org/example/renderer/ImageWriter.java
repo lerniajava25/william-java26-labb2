@@ -29,7 +29,7 @@ public final class ImageWriter {
             }
         }
         try {
-            File file = new File(path + "output.png");
+            File file = new File(path);
             ImageIO.write(image, "PNG", file);
         } catch(IOException e) {
             IO.println("Kunde inte skriva ut bild: " + e.getMessage());

@@ -16,7 +16,7 @@ public class Main {
     private static final int VIEWPORT_WIDTH = 100;
     private static final int VIEWPORT_HEIGHT = 100;
 
-    private static final String IMAGE_OUTPUT_PATH = "./";
+    private static final String IMAGE_OUTPUT_PATH = "./output.png";
 
     void main() {
         List<Shape> shapes = new ArrayList<>();
