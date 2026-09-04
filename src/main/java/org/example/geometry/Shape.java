@@ -6,7 +6,7 @@ import org.example.math.Ray;
 import java.util.Optional;
 
 public abstract class Shape {
-    protected Color color = new Color(1, 1, 1);
+    protected Color color = new Color(0, 0, 0);
 
     public Color color() {
         return color;
