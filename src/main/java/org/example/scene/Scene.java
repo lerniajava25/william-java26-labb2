@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Optional;
 
 public class Scene {
-    private final List<Shape> shapes;
+    private final List<Shape> shapes = new ArrayList<>();
 
-    public Scene(List<Shape> shapes) {
-        this.shapes = new ArrayList<>(shapes);
+    public void addShape(Shape shape) {
+        shapes.add(shape);
     }
 
     public Optional<Intersection> findClosestHit(Ray ray) {
