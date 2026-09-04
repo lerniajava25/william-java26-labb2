@@ -6,6 +6,7 @@ import org.example.math.Ray;
 import org.example.scene.Camera;
 import org.example.scene.Scene;
 
+import java.util.Arrays;
 import java.util.Optional;
 
 public class Renderer {
@@ -28,7 +29,7 @@ public class Renderer {
     }
 
     public Color[][] getColorData() {
-        return colorData;
+        return Arrays.stream(colorData).map(Color[]::clone).toArray(Color[][]::new);
     }
 
     public void renderScene() {

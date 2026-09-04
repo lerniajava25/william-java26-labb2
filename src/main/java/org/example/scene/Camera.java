@@ -3,6 +3,8 @@ package org.example.scene;
 import org.example.math.Ray;
 import org.example.math.Vector3D;
 
+import java.util.Arrays;
+
 public class Camera {
     private final Vector3D position;
     private final Vector3D direction;
@@ -39,7 +41,7 @@ public class Camera {
     }
 
     public Ray[][] getViewportRays() {
-        return viewportRays;
+        return Arrays.stream(viewportRays).map(Ray[]::clone).toArray(Ray[][]::new);
     }
 
     private void generateViewportRays() {
